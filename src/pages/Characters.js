@@ -1,5 +1,11 @@
+// Import des packages
 import axios from "axios";
 import { useEffect, useState } from "react";
+
+// import des pages
+// import CharacterCommics from "./CharacterComics";
+
+// import des components
 
 const Characters = () => {
   const [data, setData] = useState();
@@ -8,7 +14,8 @@ const Characters = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("https://localhost:4000/characters");
+        const response = await axios.get("http://localhost:4000/characters");
+        // console.log(response.data);
         setData(response.data);
         setIsLoading(false);
       } catch (error) {
@@ -21,21 +28,24 @@ const Characters = () => {
   return isLoading ? (
     <p>Loading ...</p>
   ) : (
-    <div>
-      {data.results.map((character) => {
-        return (
-          <article key={character._id}>
-            <p>{character.name}</p>
-            <img
-              src={
-                character.thumbnail.path + "." + character.thumbnail.extension
-              }
-              alt=""
-            />
-          </article>
-        );
-      })}
-    </div>
+    <main>
+      <div className="card">
+        {data.results.map((character) => {
+          return (
+            <article key={character._id}>
+              <img
+                src={
+                  character.thumbnail.path + "." + character.thumbnail.extension
+                }
+                alt=""
+              />
+              <h2> {character.name}</h2>
+              <p>{character.description}</p>
+            </article>
+          );
+        })}
+      </div>
+    </main>
   );
 };
 
