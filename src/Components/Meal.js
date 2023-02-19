@@ -1,31 +1,41 @@
 //import package
 import React from "react";
 import { Link } from "react-router-dom";
-// import { useState, useEffect } from "react";
+import { useState } from "react";
 
 //import pages
 import Characters from "../pages/Characters";
 import Comics from "../pages/Comics";
 import Favoris from "../pages/Favoris";
 //import image
-
 import stanLee from "../assets/stanLee.jpg";
 
+//import components
+
 const Meal = () => {
-  //   const [search, setSearch] = useState("");
-
-  //   useEffect(() => {
-
+  const [search, setSearch] = useState("");
+  // useEffect(() => {
+  //   const fetchData = async () => {
   //     setSearch(search);
-  //   }, []);
+  //   };
+  //   fetchData();
+  // }, []);
   return (
-    <div className="meal">
+    <div className="hero">
       <img src={stanLee} alt="" />
-      <input
-        type="text"
-        placeholder="Entre le nom de ton Personnage / Comics "
-      />
       <div>
+        <input
+          className="search"
+          value={search}
+          type="text"
+          placeholder="Entre le nom de ton Personnage / Comics "
+          onChange={(event) => {
+            setSearch(event.target.value);
+          }}
+        />
+      </div>
+
+      <div className="meal">
         <Link to="/" element={<Characters />}>
           <p>Personnages</p>
         </Link>

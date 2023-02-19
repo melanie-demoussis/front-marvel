@@ -1,7 +1,13 @@
+/* GENERAL */
 .App {
   display: flex;
   flex-direction: column;
 }
+a {
+  text-decoration: none;
+}
+
+/* LE HEADER */
 header {
   width: 100vw;
   height: 300px;
@@ -13,21 +19,40 @@ header img {
   width: 100vw;
   height: 300px;
 }
-.meal {
+
+/* LE HERO */
+.hero {
   background-color: aliceblue;
   height: 200px;
   display: flex;
+
   justify-content: space-around;
   align-items: center;
   font-size: 25px;
 }
-.meal p {
-  text-decoration: underline;
+.meal {
+  display: flex;
 }
-.meal img {
+.meal a {
+  /* background-color: #615caa; */
+  margin: 20px;
+}
+
+.search {
+  width: 250px;
+  height: 20px;
+}
+
+.search:hover {
+  color: red;
+}
+.hero img {
   width: 250px;
   border-radius: 50%;
 }
+
+/* PAGE CHARACTERS */
+/* LE MAIN */
 
 .card {
   background-color: #312c74;
@@ -46,7 +71,7 @@ article {
   width: 270px;
   margin: 10px;
   padding: 10px;
-
+  position: relative;
   border-radius: 5px;
   text-align: center;
 }
@@ -55,6 +80,7 @@ article {
   height: 250px;
   margin: 5px;
   border: 2px solid black;
+  position: relative;
 }
 h2 {
   /* background-color: azure; */
@@ -62,9 +88,43 @@ h2 {
   font-weight: bold;
   text-align: center;
   margin-top: 10px;
-  text-decoration: none;
 }
 .card p {
+  /* background-color: aquamarine; */
   font-size: 25px;
   margin: 10px;
+}
+.like i {
+  /* background-color: aliceblue; */
+  position: relative;
+  font-size: 25px;
+}
+.paginate {
+  display: flex;
+  justify-content: center;
+}
+
+/* PAGE COMICS */
+.books {
+  background-color: #615caa;
+  display: flex;
+  justify-content: flex-start;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.comics h2 {
+  margin: 20px;
+  color: #e3e989;
+}
+.comics p {
+  font-size: 20px;
+  text-align: center;
+  color: #def1fb;
+}
+.comics img {
+  width: 250px;
+  height: 250px;
+  margin: 5px;
+  border-radius: 2px;
+  border: 2px solid black;
 }

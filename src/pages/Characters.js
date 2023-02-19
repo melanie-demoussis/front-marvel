@@ -1,6 +1,7 @@
 // Import des packages
 import axios from "axios";
 import { useEffect, useState } from "react";
+
 import { Link } from "react-router-dom";
 
 // import des pages
@@ -25,6 +26,7 @@ const Characters = () => {
     fetchData();
   }, []);
   console.log("ok");
+
   return isLoading ? (
     <p>Loading ...</p>
   ) : (
@@ -33,8 +35,11 @@ const Characters = () => {
         {data.results.map((character) => {
           return (
             <div>
-              <Link to="/characterComics" element={<CharacterCommics />}>
-                <article key={character._id}>
+              <article key={character._id}>
+                <div className="like">
+                  <i class="fa-regular fa-heart" onClick={() => {}}></i>
+                </div>
+                <Link to="/characterComics" element={<CharacterCommics />}>
                   <img
                     src={
                       character.thumbnail.path +
@@ -42,14 +47,20 @@ const Characters = () => {
                       character.thumbnail.extension
                     }
                     alt=""
-                  />
+                  />{" "}
                   <h2> {character.name}</h2>
-                  <p>{character.description}</p>
-                </article>
-              </Link>
+                  <p>{character.description}</p>{" "}
+                </Link>
+              </article>
             </div>
           );
         })}
+      </div>
+      <div className="paginate">
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>4</button>
       </div>
     </main>
   );

@@ -25,13 +25,18 @@ const CharacterCommics = () => {
   ) : (
     <main>
       <div>
-        {data.results.map((character) => {
+        {data.results.map((characterId) => {
           return (
-            <div key={character._id}>
-              <div>{character.comics}</div>
+            <div key={characterId._id}>
+              <div>{characterId.comics}</div>
             </div>
           );
         })}
+      </div>
+      <div>
+        <button>2</button>
+        <button>3</button>
+        <button>4</button>
       </div>
     </main>
   );

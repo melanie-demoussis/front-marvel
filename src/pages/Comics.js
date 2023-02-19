@@ -22,10 +22,10 @@ const Comics = () => {
   return isLoading ? (
     <div>Loading ...</div>
   ) : (
-    <div>
+    <div className="books">
       {data.results.map((comic) => {
         return (
-          <div>
+          <div className="comics">
             <article key={comic._id}>
               <img
                 src={comic.thumbnail.path + "." + comic.thumbnail.extension}

@@ -18,6 +18,7 @@ function App() {
     <Router>
       <Header />
       <Meal />
+
       <Routes>
         <Route path="/" element={<Characters />} />
         <Route path="/characterComics" element={<CharacterCommics />} />
