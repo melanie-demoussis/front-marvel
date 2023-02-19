@@ -4,35 +4,38 @@
 }
 header {
   width: 100vw;
-  height: 500px;
+  height: 300px;
   display: flex;
   flex-direction: column;
+  object-fit: cover;
 }
 header img {
   width: 100vw;
-  height: 400px;
+  height: 300px;
 }
 .meal {
   background-color: aliceblue;
   height: 200px;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   font-size: 25px;
-  padding: 20px;
 }
 .meal p {
-  margin: 20px;
+  text-decoration: underline;
+}
+.meal img {
+  width: 250px;
+  border-radius: 50%;
 }
 
 .card {
   background-color: #312c74;
   width: 100vw;
-
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-around;
+  align-items: flex-start;
 }
 article {
   background-color: #ed171e;
@@ -59,6 +62,7 @@ h2 {
   font-weight: bold;
   text-align: center;
   margin-top: 10px;
+  text-decoration: none;
 }
 .card p {
   font-size: 25px;

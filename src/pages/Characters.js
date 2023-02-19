@@ -1,10 +1,10 @@
 // Import des packages
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 // import des pages
-// import CharacterCommics from "./CharacterComics";
-
+import CharacterCommics from "./CharacterComics";
 // import des components
 
 const Characters = () => {
@@ -32,16 +32,22 @@ const Characters = () => {
       <div className="card">
         {data.results.map((character) => {
           return (
-            <article key={character._id}>
-              <img
-                src={
-                  character.thumbnail.path + "." + character.thumbnail.extension
-                }
-                alt=""
-              />
-              <h2> {character.name}</h2>
-              <p>{character.description}</p>
-            </article>
+            <div>
+              <Link to="/characterComics" element={<CharacterCommics />}>
+                <article key={character._id}>
+                  <img
+                    src={
+                      character.thumbnail.path +
+                      "." +
+                      character.thumbnail.extension
+                    }
+                    alt=""
+                  />
+                  <h2> {character.name}</h2>
+                  <p>{character.description}</p>
+                </article>
+              </Link>
+            </div>
           );
         })}
       </div>
